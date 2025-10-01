@@ -76,7 +76,7 @@ const main = async () => {
         database: adapterDB,
     })
 
-    // QRPortalWeb() // Comentado temporalmente para depurar EADDRINUSE
+    QRPortalWeb({ port: 3001 }) // Usando puerto alternativo para evitar conflicto
 
     // Esperar a que el provider esté listo antes de configurar las rutas
     await new Promise(resolve => setTimeout(resolve, 1000))
