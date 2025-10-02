@@ -52,13 +52,14 @@ const flowPedido = addKeyword(['pedido', 'orden'])
 
 
 
-const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
-    .addAnswer('🙌 Bienvenido a la Droguería')
+const flowPrincipal = addKeyword(['hola', 'ole', 'alo', 'buenas', 'dias', 'tardes', 'noches'])
+    .addAnswer('🙌 Bienvenido a Droguería Avenida 🏥')
     .addAnswer(
         [
             '¿En qué podemos ayudarte?',
-            '👉 Escribe *pedido* para registrar un nuevo pedido',
-            '👉 Escribe *ayuda* para obtener más información',
+            '👉 Para realizar cualquier pedido por favor nos puedes contactar a los Siguientes Números:',
+            '👉 Whatsapp 3175825179',
+            '👉 Líneas Telefónicas 3175825179, 3153026855, 6075636401',
         ],
         null,
         null,
