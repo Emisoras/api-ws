@@ -31,7 +31,7 @@ Añade todos tus archivos al control de versiones, realiza tu primer commit y su
 git add .
 git commit -m "Initial commit: Project setup and .gitignore"
 git branch -M main
-git remote add origin <URL_DE_TU_REPOSITORIO_GITHUB>
+git remote add origin https://github.com/Emisoras/api-ws.git
 git push -u origin main
 ```
 Reemplaza `<URL_DE_TU_REPOSITORIO_GITHUB>` con la URL real de tu repositorio.
@@ -83,8 +83,8 @@ Navega a un directorio adecuado en tu VPS (por ejemplo, `/var/www/`) y clona tu 
 
 ```bash
 cd /var/www/
-git clone <URL_DE_TU_REPOSITORIO_GITHUB>
-cd <NOMBRE_DE_TU_CARPETA_DE_PROYECTO> # Por ejemplo, cd api-ws2/base-baileys-memory
+git clone https://github.com/Emisoras/api-ws.git
+cd base-baileys-memory # Por ejemplo, cd api-ws2/base-baileys-memory
 ```
 Reemplaza `<URL_DE_TU_REPOSITORIO_GITHUB>` con la URL de tu repositorio y `<NOMBRE_DE_TU_CARPETA_DE_PROYECTO>` con el nombre de la carpeta que se crea al clonar (probablemente `base-baileys-memory`).
 
@@ -146,7 +146,7 @@ Nginx reenviará las solicitudes de tu IP pública al puerto donde tu aplicació
 Es crucial que tu aplicación Node.js escuche en `0.0.0.0` para que Nginx pueda acceder a ella. Puedes hacerlo estableciendo la variable de entorno `HOST`.
 
 ```bash
-cd /var/www/<NOMBRE_DE_TU_CARPETA_DE_PROYECTO> # Asegúrate de estar en la raíz de tu proyecto
+cd /var/www/api-ws # Asegúrate de estar en la raíz de tu proyecto
 HOST=0.0.0.0 PORT=3000 npm start
 ```
 
@@ -201,3 +201,35 @@ Una vez que todo esté configurado y tu aplicación esté corriendo con PM2 (o `
     ```
 
 ¡Con estos pasos, tu API debería estar funcionando correctamente en tu VPS!
+
+El formato de la petición debe ser el siguiente:
+
+Endpoint: http://localhost:3000/send-message/ (o la URL donde esté desplegada tu API)
+
+Método HTTP: POST
+
+Encabezados (Headers): Content-Type: application/json
+
+Cuerpo de la solicitud (Request Body): Debe ser un objeto JSON con las siguientes propiedades:
+
+- phone : El número de teléfono del destinatario (solo los 10 dígitos, sin código de país ni caracteres especiales).
+- message : El texto del mensaje que deseas enviar.
+
+
+
+from PIL import Image
+
+try:
+    imagen = Image.open("tu_imagen.jpg")
+    imagen.show()
+except FileNotFoundError:
+    print("Error: El archivo de imagen no se encontró.")
+
+max_memory_restart: '1000m',
+excec_mode: "cluster",
+instances: 1,
+cron_restart: "59 23 * * *",
+
+
+
+clave PM2 Plus pm2 link ri5qaivtv90zq7h bs52uhvakrayvay
