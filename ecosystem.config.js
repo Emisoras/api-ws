@@ -8,7 +8,7 @@ module.exports = {
      instances: 1,                // Número de instancias 
      // cron_restart: "59 23 * * *", // Reiniciar todos los días a las 23:59 
      env: { 
-       "PORT": 3001, 
+       "PORT": 3000, 
        "HOST": "0.0.0.0" 
      }
   }]
